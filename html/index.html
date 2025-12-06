@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marean Agene</title>
+    <link rel="stylesheet" href="../style/style.css">
+</head>
+
+<body>
+
+<div class="hero">
+
+    <div class="circle-bg"></div>
+
+    <img src="../image/Marean.png" class="profile-img" alt="Marian">
+
+
+<div class="left-text">
+    <h1 class="title_Mla">Marean Agene</h1>
+    <h2>Practical Software Engineering · NVIDIA 👩🏽‍💻</h2>
+
+    <div class="social-links">
+        <a href="https://github.com/mareanagene" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/marean-agene-23141b250/" target="_blank">LinkedIn</a>
+    </div>
+</div>
+
+
+    <div class="side-bar">
+        <a href="../html/resume.html" class="sidebar-link">Resume</a>
+        <a href="../html/about.html" class="sidebar-link">About Me</a>
+        <a href="contact.html" class="sidebar-link">Contact</a>
+    </div>
+
+</div>
+
+<!-- FADE OUT TRANSITION -->
+<script>
+const links = document.querySelectorAll(".sidebar-link");
+
+links.forEach(link => {
+    link.addEventListener("click", function(event) {
+        event.preventDefault();
+        document.body.classList.add("fade-out");
+
+        setTimeout(() => {
+            window.location.href = link.getAttribute("href");
+        }, 500);
+    });
+});
+
+document.querySelectorAll(".sidebar-link").forEach(link => {
+    link.addEventListener("click", function(event) {
+        event.preventDefault();
+
+        // start image animation
+        document.querySelector(".profile-img").classList.add("move-up-left");
+
+        // make fade-out effect
+        setTimeout(() => {
+            window.location.href = link.getAttribute("href");
+        }, 500);
+    });
+});
+</script>
+
+
+</body>
+</html>

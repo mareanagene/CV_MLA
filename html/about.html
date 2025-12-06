@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About – Marean Agene</title>
+    <link rel="stylesheet" href="../style/about.css">
+</head>
+
+<body>
+
+<!-- BACK BUTTON -->
+<div class="top-bar">
+    <a href="../html/index.html" class="back-btn page-back">← Back to Home</a>
+</div>
+
+<!-- TITLE -->
+<h1 class="page-title">
+    Behind the Code: <span class="pink">Marean Agene</span>
+</h1>
+
+<!-- ABOUT CONTENT -->
+<div class="about-wrapper">
+ <img src="../image/Marean.png" class="about-photo" alt="Marean">
+    <div class="about-text">
+
+        <p>
+            Hi! I'm <strong>Marean Agene</strong>, born on <strong>21 October 2002</strong> in Haifa, Israel.
+            I studied Practical Software Engineering at ORT Braude College in Karmiel,
+            where I earned academic distinction in my first year and joined the college excellence program.
+        </p>
+
+        <p>
+            Together with a team of six students, we developed an innovative start-up idea
+            and competed in the national ORT colleges competition — proudly winning
+            <strong>3rd place</strong>. This experience strengthened my passion for creativity,
+            teamwork, and building something new from scratch.
+        </p>
+
+        <p>
+            I graduated with honors (average 91), and today I work at <strong>NVIDIA</strong> in the ITPE Lab,
+            supporting hardware testing, lab workflows, and production test development.
+            In my free time, I build tools and automation scripts that help the team
+            work more efficiently.
+        </p>
+
+        <p>
+            I am also studying <strong>BDA – Big Data Analyst</strong> at the Technion Continuing Education School.
+            I love learning, exploring, and expanding my knowledge. I believe learning has no limits:
+            no age, no perfect timing — just opportunity.
+        </p>
+
+        <p>
+            Outside of work, I enjoy exploring new tech, watching movies and series,
+            and… yes, online shopping (it’s a hobby 😄).
+        </p>
+
+        <p class="end-line">
+            So that's a little about me ✨
+        </p>
+    </div>
+
+</div>
+
+<!-- IMAGE GALLERY AT THE BOTTOM -->
+<div class="moving-gallery">
+    <div class="moving-track" id="track">
+
+        <!-- 6 big images -->
+        <img src="../image/all_teams.png" class="scroll-img">
+        <img src="../image/certifcate1.png" class="scroll-img">
+        <img src="../image/certifcate2.png" class="scroll-img">
+        <img src="../image/diploma.png" class="scroll-img">
+        <img src="../image/oneyear.png" class="scroll-img">
+        <img src="../image/product.png" class="scroll-img">
+
+        <!-- duplicate for smooth infinite loop -->
+        <img src="../image/all_teams.png" class="scroll-img">
+        <img src="../image/certifcate1.png" class="scroll-img">
+        <img src="../image/certifcate2.png" class="scroll-img">
+        <img src="../image/diploma.png" class="scroll-img">
+        <img src="../image/oneyear.png" class="scroll-img">
+        <img src="../image/product.png" class="scroll-img">
+
+    </div>
+</div>
+
+<script>
+    const track = document.getElementById("track");
+
+    /* DESKTOP: pause on hover */
+    track.addEventListener("mouseenter", () => {
+        track.classList.add("paused");
+    });
+    track.addEventListener("mouseleave", () => {
+        track.classList.remove("paused");
+    });
+
+    /* MOBILE: pause on touch */
+    track.addEventListener("touchstart", () => {
+        track.classList.add("paused");
+    });
+
+    /* Resume when finger lifted */
+    track.addEventListener("touchend", () => {
+        track.classList.remove("paused");
+    });
+
+    /* Prevent scrolling the page when touching gallery */
+    track.addEventListener("touchmove", (e) => {
+        e.preventDefault();
+    }, { passive: false });
+
+    const backLink = document.querySelector(".page-back");
+
+    backLink.addEventListener("click", function(e) {
+        e.preventDefault(); 
+
+        document.body.classList.add("fade-out"); 
+
+        setTimeout(() => {
+            window.location.href = backLink.getAttribute("href");
+        }, 600); 
+    });
+</script>
+
+</body>
+</html>

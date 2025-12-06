@@ -1,0 +1,150 @@
+body {
+    margin: 0;
+    background: #1a1a1d;
+    font-family: 'Poppins', Arial, sans-serif;
+    color: #eee;
+}
+
+.top-bar {
+    width: 100%;
+    padding: 20px;
+    background: transparent;
+    text-align: left;
+}
+
+.back-btn {
+    padding: 10px 20px;
+    background: #D8A7B1;
+    color: #1a1a1d;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.back-btn:hover {
+    background: white;
+    color: black;
+}
+
+.resume-wrapper {
+    max-width: 900px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+.name {
+    font-size: 42px;
+    color: #D8A7B1;
+    margin-bottom: 5px;
+}
+
+.contact {
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+.section {
+    margin-top: 40px;
+}
+
+.section h2 {
+    border-left: 4px solid #D8A7B1;
+    padding-left: 10px;
+    font-size: 26px;
+    color: #D8A7B1;
+}
+
+.item h3 {
+    color: #D8A7B1;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+ul {
+    margin-top: 5px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+strong {
+    color: #F2C6D2;
+}
+.header-with-photo {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.resume-photo {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #D8A7B1;
+    box-shadow: 0 0 20px rgba(216,167,177,0.3);
+    transition: all 0.9s ease;
+    position: relative;
+}
+
+
+
+.resume-photo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(255,200,220,0.45);
+}
+
+.resume-photo.move-to-home-position {
+    transform: translate(120px, 120px) scale(1.05);
+    opacity: 0.95;
+}
+/* Fade out effect for the whole page */
+.page-fade-out {
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+@media (max-width: 900px) {
+
+    .resume-wrapper {
+        width: 90%;
+        margin: auto;
+    }
+
+    .header-with-photo {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .resume-photo {
+        width: 180px;
+        height: 180px;
+    }
+
+    .top-bar {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .back-btn {
+        font-size: 14px;
+    }
+
+    .section h2 {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 480px) {
+    .resume-photo {
+        width: 150px;
+        height: 150px;
+    }
+    .resume-photo.move-to-home-position {
+        transform: none !important;
+        opacity: 1 !important;
+    }
+}
+

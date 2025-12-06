@@ -1,0 +1,121 @@
+body {
+    margin: 0;
+    background: #1a1a1d;
+    font-family: 'Poppins', sans-serif;
+    color: #eee;
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* BACK BUTTON */
+.top-bar {
+    padding: 20px;
+}
+
+.back-btn {
+    background: #D8A7B1;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    color: #1a1a1d;
+    transition: 0.3s;
+}
+
+.back-btn:hover {
+    background: white;
+}
+.about-photo {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    border: 4px solid #D8A7B1;
+    object-fit: cover;
+    box-shadow: 0px 10px 30px rgba(0,0,0,0.45);
+    animation: fadeIn 1s ease;
+}
+
+/* TITLE */
+.page-title {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 36px;
+    color: #D8A7B1;
+}
+
+.pink {
+    color: #F2C6D2;
+}
+
+/* LAYOUT */
+.about-wrapper {
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 40px;
+    display: flex;
+    gap: 40px;
+}
+
+.about-text {
+    width: 60%;
+    line-height: 1.8;
+    font-size: 18px;
+}
+
+.end-line {
+    font-size: 20px;
+    margin-top: 15px;
+    color: #F2C6D2;
+}
+
+
+/* Moving gallery wrapper */
+.moving-gallery {
+    width: 100%;
+    overflow: hidden;
+    margin-top: 60px;
+    padding: 20px 0;
+}
+
+/* Horizontal moving strip */
+.moving-track {
+    display: flex;
+    gap: 25px;
+    animation: scroll 18s linear infinite;
+}
+
+/* BIG Showcase images */
+.scroll-img {
+    width: 260px;      
+    height: 260px;
+    border-radius: 15px;
+    object-fit: cover;
+    border: 3px solid #D8A7B1;
+    box-shadow: 0 0 18px rgba(216,167,177,0.8);
+    flex-shrink: 0;
+}
+
+/* Animation – smooth side movement */
+@keyframes scroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-100%); }
+}
+
+/* Mobile layout */
+@media (max-width: 600px) {
+    .scroll-img {
+        width: 180px;
+        height: 180px;
+    }
+}
+
+.moving-track.paused {
+    animation-play-state: paused !important;
+}
+
+body.fade-out {
+    opacity: 0;
+    transform: translateX(40px);
+}
+

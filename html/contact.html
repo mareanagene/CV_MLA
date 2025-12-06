@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact – Marean Agene</title>
+    <link rel="stylesheet" href="../style/contact.css">
+</head>
+
+<body>
+
+<div class="top-bar">
+    <a href="../html/index.html" class="back-btn page-back">← Back to Home</a>
+</div>
+
+<h1 class="page-title">Let’s Connect 🤍</h1>
+
+<div class="contact-wrapper">
+
+    <p class="contact-sub">
+        Feel free to reach out — I'm always happy to connect ✨  
+    </p>
+
+    <div class="contact-box">
+        <h2>📧 Email</h2>
+        <a href="mailto:mareanagene8@gmail.com" class="contact-link">
+            mareanagene8@gmail.com
+        </a>
+    </div>
+
+    <div class="contact-box">
+        <h2>📱 Phone</h2>
+        <a href="tel:0556608134" class="contact-link">
+            055-6608134
+        </a>
+    </div>
+
+</div>
+<script>
+        const backLink = document.querySelector(".page-back");
+
+    backLink.addEventListener("click", function(e) {
+        e.preventDefault(); 
+
+        document.body.classList.add("fade-out"); 
+
+        setTimeout(() => {
+            window.location.href = backLink.getAttribute("href");
+        }, 600); 
+    });
+</script>
+
+</body>
+</html>
