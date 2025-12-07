@@ -19,7 +19,7 @@ body.fade-out {
 /* When entering the page */
 body.fade-in {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateX(40px);
 }
 
 

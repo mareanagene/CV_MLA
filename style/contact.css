@@ -15,7 +15,7 @@ body {
 /* when leaving the page */
 body.fade-out {
     opacity: 0;
-    transform: translateX(40px);
+    transform: translateX(-40px);
 }
 
 /* when entering the page (optional, for clarity) */

@@ -7,14 +7,8 @@
     <link rel="stylesheet" href="../style/resume.css">
 </head>
 
-<body class="fade-out">
+<body>
 
-<!-- Fade-in on load -->
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-    document.body.classList.remove("fade-out");
-});
-</script>
 
 <div class="top-bar">
    <a href="../index.html" class="back-btn resume-back">← Back to Home</a>
@@ -131,35 +125,39 @@ document.addEventListener("DOMContentLoaded", () => {
 </section>
 
 </div>
-
-<!-- Smooth Back Transition -->
 <script>
-const resumeBack = document.querySelector(".resume-back");
+// Add fade-in when opening this page
+document.addEventListener("DOMContentLoaded", () => {
+    document.body.classList.remove("fade-out");
 
-if (resumeBack) {
-    resumeBack.addEventListener("click", () => {
+    // Reset animation if returning back
+    if (localStorage.getItem("returnFromResume") === "yes") {
+        localStorage.removeItem("returnFromResume");
+    }
+});
 
-        const photo = document.querySelector(".resume-photo");
+// BACK BUTTON ANIMATION (only for this page)
+const backBtn = document.querySelector(".resume-back");
 
-        const isMobile = window.innerWidth < 900;
+if (backBtn) {
+    backBtn.addEventListener("click", function (event) {
+        event.preventDefault();  // Prevent instant navigation
 
-        // move photo only on desktop
-        if (!isMobile && photo) {
-            photo.classList.add("move-to-home-position");
-        }
-
-        // fade out entire page
-        document.body.classList.add("fade-out");
-
-        // tell index page to animate
+        // Save state so the previous page knows we came from resume
         localStorage.setItem("returnFromResume", "yes");
 
+        // Start fade-out animation
+        document.body.classList.add("fade-out");
+
+        const url = backBtn.getAttribute("href");
+
         setTimeout(() => {
-            window.location.href = "../index.html";
-        }, 600);
+            window.location.href = url;
+        }, 500);
     });
 }
 </script>
+
 
 </body>
 </html>

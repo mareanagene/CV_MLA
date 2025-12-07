@@ -7,14 +7,7 @@
     <link rel="stylesheet" href="../style/about.css">
 </head>
 
-<body class="fade-out">
-
-<!-- Fade-in on load -->
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-    document.body.classList.remove("fade-out");
-});
-</script>
+<body>
 
 <!-- BACK BUTTON -->
 <div class="top-bar">
@@ -93,47 +86,72 @@ document.addEventListener("DOMContentLoaded", () => {
 </div>
 
 <script>
-    const track = document.getElementById("track");
+/* ----------------------------------------
+   IMAGE GALLERY (track) interactions
+---------------------------------------- */
+const track = document.getElementById("track");
 
-    /* DESKTOP: pause on hover */
+if (track) {
+    /* Desktop: pause on hover */
     track.addEventListener("mouseenter", () => {
         track.classList.add("paused");
     });
+
     track.addEventListener("mouseleave", () => {
         track.classList.remove("paused");
     });
 
-    /* MOBILE: pause on touch */
+    /* Mobile: pause on touch */
     track.addEventListener("touchstart", () => {
         track.classList.add("paused");
     });
 
-    /* Resume when finger lifted */
     track.addEventListener("touchend", () => {
         track.classList.remove("paused");
     });
 
-    /* Prevent scrolling the page when touching gallery */
+    /* Prevent page scroll when dragging gallery */
     track.addEventListener("touchmove", (e) => {
         e.preventDefault();
     }, { passive: false });
+}
 
-    /* Smooth Back Transition */
-    const backLink = document.querySelector(".page-back");
+/* ----------------------------------------
+   FADE-IN when page loads
+---------------------------------------- */
+document.addEventListener("DOMContentLoaded", () => {
+    document.body.classList.remove("fade-out");
 
-    if (backLink) {
-        backLink.addEventListener("click", () => {
-
-            document.body.classList.add("fade-out");
-
-            const url = backLink.getAttribute("href");
-
-            setTimeout(() => {
-                window.location.href = url;
-            }, 600);
-        });
+    // Clear return-from-resume flag
+    if (localStorage.getItem("returnFromResume") === "yes") {
+        localStorage.removeItem("returnFromResume");
     }
+});
+
+/* ----------------------------------------
+   BACK BUTTON with fade-out animation
+---------------------------------------- */
+const backBtn = document.querySelector(".page-back");  // FIXED
+
+if (backBtn) {
+    backBtn.addEventListener("click", (event) => {
+        event.preventDefault(); // stop instant navigation
+
+        // mark that the previous page should reset animation
+        localStorage.setItem("returnFromResume", "yes");
+
+        // add fade-out animation class
+        document.body.classList.add("fade-out");
+
+        // navigate after the animation
+        setTimeout(() => {
+            window.location.href = backBtn.getAttribute("href");
+        }, 500);
+    });
+}
 </script>
+
+
 
 </body>
 </html>
