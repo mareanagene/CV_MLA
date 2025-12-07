@@ -7,7 +7,14 @@
     <link rel="stylesheet" href="../style/contact.css">
 </head>
 
-<body>
+<body class="fade-out">
+
+<!-- Fade-in on load -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    document.body.classList.remove("fade-out");
+});
+</script>
 
 <div class="top-bar">
     <a href="../index.html" class="back-btn page-back">← Back to Home</a>
@@ -36,18 +43,23 @@
     </div>
 
 </div>
+
+<!-- Fade-out transition -->
 <script>
-        const backLink = document.querySelector(".page-back");
+const backLink = document.querySelector(".page-back");
 
-    backLink.addEventListener("click", function(e) {
-        e.preventDefault(); 
+if (backLink) {
+    backLink.addEventListener("click", () => {
 
-        document.body.classList.add("fade-out"); 
+        document.body.classList.add("fade-out");
+
+        const url = backLink.getAttribute("href");
 
         setTimeout(() => {
-            window.location.href = backLink.getAttribute("href");
-        }, 600); 
+            window.location.href = url;
+        }, 600);
     });
+}
 </script>
 
 </body>

@@ -1,22 +1,35 @@
+/* ----------- PAGE TRANSITIONS ----------- */
+
 body {
     margin: 0;
     background: #1a1a1d;
     font-family: 'Poppins', sans-serif;
     color: #eee;
+
+    /* default state */
     opacity: 1;
     transform: translateX(0);
     transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
+/* when leaving the page */
 body.fade-out {
     opacity: 0;
     transform: translateX(40px);
 }
 
-/* BACK BUTTON */
+/* when entering the page (optional, for clarity) */
+body.fade-in {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* ----------- BACK BUTTON ----------- */
+
 .top-bar {
     padding: 20px;
 }
+
 .back-btn {
     background: #D8A7B1;
     padding: 10px 20px;
@@ -26,17 +39,21 @@ body.fade-out {
     color: #1a1a1d;
     transition: 0.3s;
 }
+
 .back-btn:hover {
     background: white;
 }
 
-/* TITLE */
+/* ----------- TITLE ----------- */
+
 .page-title {
     text-align: center;
     margin-top: 30px;
     font-size: 36px;
     color: #D8A7B1;
 }
+
+/* ----------- CONTACT CONTENT ----------- */
 
 .contact-wrapper {
     max-width: 700px;
@@ -76,7 +93,8 @@ body.fade-out {
     text-shadow: 0 0 10px #D8A7B1;
 }
 
-/* MOBILE */
+/* ----------- MOBILE ----------- */
+
 @media (max-width: 600px) {
     .page-title {
         font-size: 28px;

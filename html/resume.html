@@ -7,14 +7,22 @@
     <link rel="stylesheet" href="../style/resume.css">
 </head>
 
-<body>
+<body class="fade-out">
+
+<!-- Fade-in on load -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    document.body.classList.remove("fade-out");
+});
+</script>
+
 <div class="top-bar">
    <a href="../index.html" class="back-btn resume-back">← Back to Home</a>
 </div>
 
 <div class="resume-wrapper">
 
-    <header class="header-with-photo">
+<header class="header-with-photo">
     <img src="../image/Marean.png" alt="Marean Agene" class="resume-photo">
 
     <div>
@@ -26,133 +34,132 @@
 </header>
 
 
-    <section class="section">
-        <h2>Summary</h2>
-        <p>
-            Motivated Junior Software Engineer, with hands-on experience in teaching and mentoring 
-            students in Java, Algorithms, and OOP. Worked as a Teaching Assistant supporting students 
-            in programming fundamentals, problem-solving skills, and algorithmic thinking.
-        </p>
-        <p>
-            Skilled in Java, Python, HTML, CSS, JavaScript, and PHP, with practical experience designing 
-            and developing a full online flight booking system as an academic final project.
-        </p>
-        <p>
-            Supporting engineering workflows through automation scripts and improving production test processes.
-        </p>
-    </section>
+<!-- --------------- Resume Sections --------------- -->
+<section class="section">
+    <h2>Summary</h2>
+    <p>
+        Motivated Junior Software Engineer, with hands-on experience in teaching and mentoring 
+        students in Java, Algorithms, and OOP. Worked as a Teaching Assistant supporting students 
+        in programming fundamentals, problem-solving skills, and algorithmic thinking.
+    </p>
+    <p>
+        Skilled in Java, Python, HTML, CSS, JavaScript, and PHP, with practical experience designing 
+        and developing a full online flight booking system as an academic final project.
+    </p>
+    <p>
+        Supporting engineering workflows through automation scripts and improving production test processes.
+    </p>
+</section>
 
-    <section class="section">
-        <h2>Work Experience</h2>
+<section class="section">
+    <h2>Work Experience</h2>
 
-        <div class="item">
-            <h3>2024–Present: Lab Technician – ITPE Lab (Interconnect Product Engineering), NVIDIA</h3>
-            <ul>
-                <li>Support R&D testing processes for transceivers during validation and performance testing.</li>
-                <li>Collaborate with test developers to execute procedures and analyze results.</li>
-                <li>Configure test environments including boards, jigs, thermal systems and optical setups.</li>
-                <li>Maintain equipment calibration and troubleshoot test issues.</li>
-                <li>Support production test lines, helping develop and validate test flows.</li>
-                <li>Develop automation scripts to increase workflow efficiency and reduce manual work.</li>
-            </ul>
-        </div>
-
-        <div class="item">
-            <h3>2022: Teaching Assistant – Java & Algorithms</h3>
-            <ul>
-                <li>Mentored students in OOP, Java fundamentals, and data structures.</li>
-                <li>Guided algorithmic thinking and practical coding exercises.</li>
-                <li>Provided one-on-one and group support for academic development.</li>
-            </ul>
-        </div>
-    </section>
-
-    <section class="section">
-        <h2>Education</h2>
-
-        <div class="item">
-            <h3>2021–2023: Practical Software Engineering – Ort Braude College</h3>
-            <p><strong>Completed with distinction.</strong></p>
-            <p>Relevant Courses: Data Structures, Databases (SQL), OOP (Java), Networking, Linux, Full Stack (HTML, Angular, PHP, JavaScript, Node.js).</p>
-
-            <p><strong>Final Project:</strong></p>
-            <ul>
-                <li>Developed an online flight booking platform.</li>
-                <li>Implemented smart filtering and seat-selection algorithms.</li>
-                <li>Frontend: HTML, CSS, JS • Backend: PHP.</li>
-            </ul>
-        </div>
-
-        <div class="item">
-            <h3>2025–Present: Big Data Analyst (BDA) – Technion Continuing Education</h3>
-            <p>
-                Currently enrolled in the <strong>Big Data Analyst</strong> professional training program at the Technion.
-                Coursework includes:
-            </p>
-            <ul>
-                <li>Python for Data Analysis</li>
-                <li>Databases & SQL for Data</li>
-                <li>Big Data Ecosystem (Hadoop, Spark)</li>
-                <li>Data Pipelines & ETL</li>
-                <li>Machine Learning Foundations</li>
-                <li>Real-world data processing tools & cloud integration</li>
-            </ul>
-            <p>
-                Focused on developing strong analytical skills and hands-on experience with modern data engineering tools.
-            </p>
-        </div>
-    </section>
-
-
-    <section class="section">
-        <h2>Training & Certifications</h2>
-
-        <div class="item">
-            <h3>2023 – Software QA & Development Course – Tsofen & ORT Braude</h3>
-            <ul>
-                <li>Training in web development and automated testing.</li>
-                <li>Experience in manual QA and Python/Selenium automation.</li>
-                <li>Built a complete automation suite for a full web system.</li>
-            </ul>
-        </div>
-    </section>
-
-    <section class="section">
-        <h2>Languages</h2>
+    <div class="item">
+        <h3>2024–Present: Lab Technician – ITPE Lab (Interconnect Product Engineering), NVIDIA</h3>
         <ul>
-            <li>Arabic – Native</li>
-            <li>Hebrew – Fluent</li>
-            <li>English – High working proficiency</li>
+            <li>Support R&D testing processes for transceivers during validation and performance testing.</li>
+            <li>Collaborate with test developers to execute procedures and analyze results.</li>
+            <li>Configure test environments including boards, jigs, thermal systems and optical setups.</li>
+            <li>Maintain equipment calibration and troubleshoot test issues.</li>
+            <li>Support production test lines, helping develop and validate test flows.</li>
+            <li>Develop automation scripts to increase workflow efficiency and reduce manual work.</li>
         </ul>
-    </section>
+    </div>
+
+    <div class="item">
+        <h3>2022: Teaching Assistant – Java & Algorithms</h3>
+        <ul>
+            <li>Mentored students in OOP, Java fundamentals, and data structures.</li>
+            <li>Guided algorithmic thinking and practical coding exercises.</li>
+            <li>Provided one-on-one and group support for academic development.</li>
+        </ul>
+    </div>
+</section>
+
+<section class="section">
+    <h2>Education</h2>
+
+    <div class="item">
+        <h3>2021–2023: Practical Software Engineering – Ort Braude College</h3>
+        <p><strong>Completed with distinction.</strong></p>
+        <p>Relevant Courses: Data Structures, Databases (SQL), OOP (Java), Networking, Linux, Full Stack (HTML, Angular, PHP, JavaScript, Node.js).</p>
+
+        <p><strong>Final Project:</strong></p>
+        <ul>
+            <li>Developed an online flight booking platform.</li>
+            <li>Implemented smart filtering and seat-selection algorithms.</li>
+            <li>Frontend: HTML, CSS, JS • Backend: PHP.</li>
+        </ul>
+    </div>
+
+    <div class="item">
+        <h3>2025–Present: Big Data Analyst (BDA) – Technion Continuing Education</h3>
+        <p>
+            Currently enrolled in the <strong>Big Data Analyst</strong> professional training program at the Technion.
+        </p>
+        <ul>
+            <li>Python for Data Analysis</li>
+            <li>Databases & SQL for Data</li>
+            <li>Big Data Ecosystem (Hadoop, Spark)</li>
+            <li>Data Pipelines & ETL</li>
+            <li>Machine Learning Foundations</li>
+            <li>Real-world data processing tools & cloud integration</li>
+        </ul>
+    </div>
+</section>
+
+<section class="section">
+    <h2>Training & Certifications</h2>
+
+    <div class="item">
+        <h3>2023 – Software QA & Development Course – Tsofen & ORT Braude</h3>
+        <ul>
+            <li>Training in web development and automated testing.</li>
+            <li>Experience in manual QA and Python/Selenium automation.</li>
+            <li>Built a complete automation suite for a full web system.</li>
+        </ul>
+    </div>
+</section>
+
+<section class="section">
+    <h2>Languages</h2>
+    <ul>
+        <li>Arabic – Native</li>
+        <li>Hebrew – Fluent</li>
+        <li>English – High working proficiency</li>
+    </ul>
+</section>
 
 </div>
+
+<!-- Smooth Back Transition -->
 <script>
-document.querySelector(".resume-back").addEventListener("click", function(e){
-    e.preventDefault();
+const resumeBack = document.querySelector(".resume-back");
 
-    const photo = document.querySelector(".resume-photo");
+if (resumeBack) {
+    resumeBack.addEventListener("click", () => {
 
-    //check if mobile
-    const isMobile = window.innerWidth < 900;
+        const photo = document.querySelector(".resume-photo");
 
-    if (!isMobile) {
-        //animate photo to center position
-        photo.classList.add("move-to-home-position");
-    }
+        const isMobile = window.innerWidth < 900;
 
-    //fade out page
-    document.body.classList.add("page-fade-out");
+        // move photo only on desktop
+        if (!isMobile && photo) {
+            photo.classList.add("move-to-home-position");
+        }
 
-    localStorage.setItem("returnFromResume", "yes");
+        // fade out entire page
+        document.body.classList.add("fade-out");
 
-    setTimeout(() => {
-    window.location.href = "../index.html";
-    }, 600);
+        // tell index page to animate
+        localStorage.setItem("returnFromResume", "yes");
 
-});
+        setTimeout(() => {
+            window.location.href = "../index.html";
+        }, 600);
+    });
+}
 </script>
-
 
 </body>
 </html>

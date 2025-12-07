@@ -37,33 +37,42 @@
 
 <!-- FADE OUT TRANSITION -->
 <script>
-const links = document.querySelectorAll(".sidebar-link");
+// Fade-in when page loads
+document.addEventListener("DOMContentLoaded", () => {
+    document.body.classList.remove("fade-out");
 
-links.forEach(link => {
-    link.addEventListener("click", function(event) {
-        event.preventDefault();
-        document.body.classList.add("fade-out");
-
-        setTimeout(() => {
-            window.location.href = link.getAttribute("href");
-        }, 500);
-    });
+    // If returning from resume → reset image position
+    if (localStorage.getItem("returnFromResume") === "yes") {
+        const img = document.querySelector(".profile-img");
+        img.classList.remove("move-up-left");
+        localStorage.removeItem("returnFromResume");
+    }
 });
 
-document.querySelectorAll(".sidebar-link").forEach(link => {
-    link.addEventListener("click", function(event) {
+/* --------- Smooth transitions for sidebar links --------- */
+
+const links = document.querySelectorAll(".sidebar-link");
+const profileImg = document.querySelector(".profile-img");
+
+links.forEach(link => {
+    link.addEventListener("click", function (event) {
         event.preventDefault();
 
-        // start image animation
-        document.querySelector(".profile-img").classList.add("move-up-left");
+        // Animate profile image moving up-left
+        profileImg.classList.add("move-up-left");
 
-        // make fade-out effect
+        // Fade out page
+        document.body.classList.add("fade-out");
+
+        const url = link.getAttribute("href");
+
         setTimeout(() => {
-            window.location.href = link.getAttribute("href");
+            window.location.href = url;
         }, 500);
     });
 });
 </script>
+
 
 
 </body>

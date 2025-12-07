@@ -1,14 +1,29 @@
+/* ----------- GLOBAL PAGE STYLE ----------- */
+
 body {
     margin: 0;
     background: #1a1a1d;
     font-family: 'Poppins', Arial, sans-serif;
     color: #eee;
+
+    /* page enters smoothly */
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 0.6s ease, transform 0.6s ease;
 }
+
+/* page leaves smoothly */
+body.fade-out {
+    opacity: 0;
+    transform: translateX(40px);
+}
+
+
+/* ----------- BACK BUTTON ----------- */
 
 .top-bar {
     width: 100%;
     padding: 20px;
-    background: transparent;
     text-align: left;
 }
 
@@ -27,6 +42,9 @@ body {
     color: black;
 }
 
+
+/* ----------- MAIN RESUME LAYOUT ----------- */
+
 .resume-wrapper {
     max-width: 900px;
     margin: auto;
@@ -43,6 +61,9 @@ body {
     color: #ccc;
     margin-bottom: 20px;
 }
+
+
+/* ----------- SECTION HEADERS ----------- */
 
 .section {
     margin-top: 40px;
@@ -70,6 +91,10 @@ ul {
 strong {
     color: #F2C6D2;
 }
+
+
+/* ----------- PHOTO HEADER ----------- */
+
 .header-with-photo {
     display: flex;
     align-items: center;
@@ -88,22 +113,20 @@ strong {
     position: relative;
 }
 
-
-
+/* Hover effect */
 .resume-photo:hover {
     transform: scale(1.05);
     box-shadow: 0 0 30px rgba(255,200,220,0.45);
 }
 
+/* Animation when going back to HOME */
 .resume-photo.move-to-home-position {
     transform: translate(120px, 120px) scale(1.05);
     opacity: 0.95;
 }
-/* Fade out effect for the whole page */
-.page-fade-out {
-    opacity: 0;
-    transition: opacity 0.6s ease;
-}
+
+
+/* ----------- RESPONSIVE ----------- */
 
 @media (max-width: 900px) {
 
@@ -138,13 +161,15 @@ strong {
 }
 
 @media (max-width: 480px) {
+
     .resume-photo {
         width: 150px;
         height: 150px;
     }
+
+    /* On very small devices avoid movement animation */
     .resume-photo.move-to-home-position {
         transform: none !important;
         opacity: 1 !important;
     }
 }
-

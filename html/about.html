@@ -7,7 +7,14 @@
     <link rel="stylesheet" href="../style/about.css">
 </head>
 
-<body>
+<body class="fade-out">
+
+<!-- Fade-in on load -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    document.body.classList.remove("fade-out");
+});
+</script>
 
 <!-- BACK BUTTON -->
 <div class="top-bar">
@@ -111,17 +118,21 @@
         e.preventDefault();
     }, { passive: false });
 
+    /* Smooth Back Transition */
     const backLink = document.querySelector(".page-back");
 
-    backLink.addEventListener("click", function(e) {
-        e.preventDefault(); 
+    if (backLink) {
+        backLink.addEventListener("click", () => {
 
-        document.body.classList.add("fade-out"); 
+            document.body.classList.add("fade-out");
 
-        setTimeout(() => {
-            window.location.href = backLink.getAttribute("href");
-        }, 600); 
-    });
+            const url = backLink.getAttribute("href");
+
+            setTimeout(() => {
+                window.location.href = url;
+            }, 600);
+        });
+    }
 </script>
 
 </body>
